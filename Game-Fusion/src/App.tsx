@@ -2,6 +2,7 @@ import { Button, ButtonGroup, Grid, GridItem, Show } from '@chakra-ui/react';
 import NavBar from './components/NavBar';
 import GameGrid from './components/GameGrid';
 import GenreList from './components/GenreList';
+import PlatformSelector from './components/PlatformSelector';
 import { useState } from 'react';
 import { Genre } from './hooks/useGenres';
 
@@ -25,8 +26,12 @@ const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
         <Show above='lg'>
         <GridItem area="aside" paddingX={5}><GenreList selectedGenre={selectedGenre} onSelectGenre={(genre)=> setSelectedGenre(genre)}/></GridItem>
         </Show>
+        
         {/* passing selected genre to the child in order to display selected genre only. */}
-        <GridItem area="main" ><GameGrid selectedGenre ={selectedGenre}/></GridItem>
+        
+        <GridItem area="main" >
+          <PlatformSelector />
+          <GameGrid selectedGenre ={selectedGenre}/></GridItem>
       </Grid>
       </div>
   )
