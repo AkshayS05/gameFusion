@@ -23,7 +23,7 @@ const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
       >
         <GridItem area="nav"><NavBar /></GridItem>
         <Show above='lg'>
-        <GridItem area="aside" paddingX={5}><GenreList onSelectGenre={(genre)=> setSelectedGenre(genre)}/></GridItem>
+        <GridItem area="aside" paddingX={5}><GenreList selectedGenre={selectedGenre} onSelectGenre={(genre)=> setSelectedGenre(genre)}/></GridItem>
         </Show>
         {/* passing selected genre to the child in order to display selected genre only. */}
         <GridItem area="main" ><GameGrid selectedGenre ={selectedGenre}/></GridItem>
