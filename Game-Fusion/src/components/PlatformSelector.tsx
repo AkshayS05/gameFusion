@@ -4,7 +4,7 @@ import usePlatforms from "../hooks/usePlatforms";
 import { Platform } from "../hooks/useGames";
 
 //recieving a prop from app
-interface Pops {
+interface Props {
   onSelectPlatform: (platform:Platform) => void;
   selectedPlatform : Platform | null;
 }
